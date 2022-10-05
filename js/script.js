@@ -127,4 +127,6 @@
 // console.log(a == 5 && c != 10); // false
 // console.log(a == 5 || c != 10); // true
 // ...........................................................
-console.log(a == 5 || c != 10); // true
+let a = 10,
+    c = 20;
+console.log(a + c); // true
