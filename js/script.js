@@ -1,4 +1,4 @@
-let numberOfFilms = prompt("How many movies have you seen already?","0");
+let numberOfFilms = prompt("How many movies have you seen already?", "0");
 console.log(numberOfFilms);
 
 const personalMovieDB = {
@@ -8,13 +8,45 @@ const personalMovieDB = {
     genres: [],
     privat: false
 }
+
+// for (i = 1; i <= 2; i++) {
+//     let film = prompt(`Movie #${i} have you seen already?`, "");
+//     if (film != null && film !== "" && film.length <= 50) {
+//         let filmAssess = +prompt(`Your assessment of movie #${i}?`, "");
+//         personalMovieDB.movies[film] = filmAssess;
+//     } else {
+//         i = i - 1;
+//     }
+// }
+
+// let i = 1;
+// while (i <= 2) {
+//     let film = prompt(`Movie #${i} have you seen already?`, "");
+//     if (film != null && film !== "" && film.length <= 50) {
+//         let filmAssess = +prompt(`Your assessment of movie #${i}?`, "");
+//         personalMovieDB.movies[film] = filmAssess;
+//         i++;
+//     }
+// }
+
+let i = 1;
+do {
+    let film = prompt(`Movie #${i} have you seen already?`, "");
+    if (film != null && film !== "" && film.length <= 50) {
+        let filmAssess = +prompt(`Your assessment of movie #${i}?`, "");
+        personalMovieDB.movies[film] = filmAssess;
+        i++;
+    }
+}
+while (i <= 5);
+
 console.log(personalMovieDB);
-
-let film_1 = prompt("Last movie 1 have you seen already?","logan");
-let filmAssess_1 = +prompt("Movie 1 assess?","8.1");
-let film_2 = prompt("Last movie 2 have you seen already?","logan");
-let filmAssess_2 = +prompt("Movie 2 assess?","8.1");
-
-// personalMovieDB.movies.film_1 = filmAssess_1;  '.'
-personalMovieDB.movies[film_1] = filmAssess_1; //  [] is better way
-personalMovieDB.movies[film_2] = filmAssess_2;
+if (personalMovieDB.count < 10 && personalMovieDB.count >= 0) {
+    alert("Переглянуто мало фільмів");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    alert("Ви класичний глядач");
+} else if (personalMovieDB.count >= 30) {
+    alert("Ви кіноман");
+} else {
+    alert("Сталася помилка");
+}
